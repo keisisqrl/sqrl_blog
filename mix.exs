@@ -39,8 +39,7 @@ defmodule SqrlBlog.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:earmark, "~> 1.2"},
-     {:coherence, "~> 0.3"},
-     {:signal_handler, github: "tsutsu/signal_handler"}
+     {:coherence, "~> 0.3"}
    ]
   end
 
