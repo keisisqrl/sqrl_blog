@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :sqrl_blog, SqrlBlog.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [scheme: "https", host: "blog.squirrelsoft.org",
+  url: [scheme: "https", host: System.get_env("HTTP_HOST"),
     port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
