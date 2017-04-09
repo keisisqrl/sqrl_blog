@@ -9,6 +9,12 @@ use Mix.Config
 config :sqrl_blog,
   ecto_repos: [SqrlBlog.Repo]
 
+# Dev/Test admin user
+config :sqrl_blog, :admin_user,
+  name: "Admin User",
+  email: "admin@example.com",
+  password: "opensesame"
+
 # Configures the endpoint
 config :sqrl_blog, SqrlBlog.Endpoint,
   url: [host: "localhost"],
@@ -25,3 +31,12 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+# %% Coherence Configuration %%   Don't remove this line
+config :coherence,
+  user_schema: SqrlBlog.User,
+  repo: SqrlBlog.Repo,
+  module: SqrlBlog,
+  logged_out_url: "/",
+  opts: [:trackable, :authenticatable]
+# %% End Coherence Configuration %%

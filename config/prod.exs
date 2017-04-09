@@ -25,6 +25,11 @@ config :sqrl_blog, SqrlBlog.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
+  config :sqrl_blog, :admin_user,
+    name: System.get_env("ADMIN_NAME"),
+    email: System.get_env("ADMIN_EMAIL"),
+    password: System.get_env("ADMIN_PASSWORD")
+
 # Do not print debug messages in production
 config :logger, level: :info
 
